@@ -2,7 +2,7 @@ import sys
 # TODO make with 'pip install -e .
 sys.path.append("../src")
 
-from math_demo import (add, add_with_bug, add_something, calculate_tax_with_bug)
+from math_demo import (add, add_with_bug, add_something, calculate_tax_with_bug, calculate_tax)
 
 def test_addition_basic():
     assert add(2,2) == 4, "Function didn't returned 4" 
@@ -64,7 +64,16 @@ def test_tax_calculation_with_bug():
     assert calculate_tax_with_bug(2000) == 300
     assert calculate_tax_with_bug(30) == 4.5
     assert calculate_tax_with_bug(1) == .15
-    print("Test TAX CALCULATION PASSED")
+    # assert calculate_tax_with_bug(1.7) == .25
+
+def test_tax_calculation_figting_pesticides():
+    #using only integers doesn't allow tast all cases
+    assert calculate_tax(1000) == 150
+    assert calculate_tax(2000) == 300
+    assert calculate_tax(30) == 4.5
+    assert calculate_tax(1) == .15
+    assert calculate_tax(1.7) == .25
+    print("Test TAX CALCULATION (FIGHTING PESTICIDES)")
 
 if __name__ == "__main__":
     test_addition_basic()
@@ -73,4 +82,4 @@ if __name__ == "__main__":
     test_bug_addition_enough()
     test_addition_reasonable()
     test_add_something_reasonable()
-    test_tax_calculation_with_bug()
+    test_tax_calculation_figting_pesticides()
