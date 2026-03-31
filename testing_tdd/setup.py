@@ -1,9 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = "ndfl",
+    name = "ndfl-aosu",
     version = "0.0.0",
-
+    long_description = "Tax calculator",
+    long_description_content_type = "text/markdown",
     package_dir = {"": "src"},
-    packages = find_packages(where="src")
+    packages = find_packages(where="src"),
+    author ='Arseniy Chukhnov',
+    author_email='arseniy2007chukhnov@gmail.com'
 )
