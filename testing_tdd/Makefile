@@ -39,8 +39,6 @@ create-structure:
 	echo "def test_placeholder(): pass" > tests/test_main.py
 	echo "# Dependencies" > requirements.txt
 	echo "pytest>=7.0" >> requirements.txt
-	echo "ruff>=0.1" >> requirements.txt
-	echo "mypy>=1.0" >> requirements.txt
 	touch src/.gitkeep tests/.gitkeep 2>nul || type nul > src/.gitkeep && type nul > tests/.gitkeep
 	@echo " Структура создана!"
 
@@ -74,7 +72,7 @@ build:
 clean:
 	@echo " Очищаем артефакты..."
 	$(RM_DIR) dist build *.egg-info 2>nul || true
-	$(RM_DIR) .pytest_cache .mypy_cache .ruff_cache htmlcov 2>nul || true
+	$(RM_DIR) .pytest_cache htmlcov 2>nul || true
 	@echo " Очистка завершена"
 
 publish-testpypi: build
